@@ -5,13 +5,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureFileManager.Cli", "src\SecureFileManager.Cli\SecureFileManager.Cli.csproj", "{27BD6A42-0F75-D84C-9049-0F5DFA0D8D8F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureFileManager.Core", "src\SecureFileManager.Core\SecureFileManager.Core.csproj", "{BEED77B1-2009-401E-80E9-D9BF57962C5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureFileManager.Data", "src\SecureFileManager.Data\SecureFileManager.Data.csproj", "{DA80333D-D1B2-49DB-9288-4089EB0508E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureFileManager.Infrastructure.Windows", "src\SecureFileManager.Infrastructure.Windows\SecureFileManager.Infrastructure.Windows.csproj", "{535A48AD-D5FD-06FA-6025-29D1D7A2B617}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureFileManager.Cli", "src\SecureFileManager.Cli\SecureFileManager.Cli.csproj", "{27BD6A42-0F75-D84C-9049-0F5DFA0D8D8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureFileManager.Tests", "tests\SecureFileManager.Tests\SecureFileManager.Tests.csproj", "{719C9569-4CC3-9FDE-187C-52051000E41C}"
 EndProject

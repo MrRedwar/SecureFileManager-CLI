@@ -14,6 +14,8 @@ dotnet run --project src/SecureFileManager.Cli --launch-profile 'SecureFileManag
 
 В Visual Studio откройте `SecureFileManager-CLI.sln`, назначьте `SecureFileManager.Cli` запускаемым проектом, выберите профиль `SecureFileManager CLI (Development)`, затем Ctrl+F5. Это обычное консольное приложение, Desktop Runtime для него не требуется.
 
+Если Visual Studio сообщает, что библиотеку классов нельзя запустить напрямую: в «Обозревателе решений» нажмите правой кнопкой на **SecureFileManager.Cli** → **«Назначить запускаемым проектом»**, затем Ctrl+F5. Core/Data/Infrastructure являются библиотеками. CLI поставлен первым C#-проектом решения для первоначального выбора; уже сохранённый Visual Studio выбор нужно переключить вручную.
+
 Локальный `src/SecureFileManager.Cli/appsettings.Development.json` уже скопирован из настроек WPF: Windows Authentication, локальный SQLEXPRESS, SecureFileManagerDB, фактический `D:\SecureFileManagerData\Storage`. Файл игнорируется Git. В Development для этого локального экземпляра явно сохранено существующее `TrustServerCertificate=True`; TLS включён, проверка подлинности сертификата отключена согласно прежней политике Development. Этот параметр не разрешён для удалённых серверов/Production.
 
 На другой машине скопируйте `appsettings.example.json` в `appsettings.Development.json` и укажите свои существующие БД и StorageRoot. Пример требует доверенного сертификата. Development JSON копируется только в локальную сборку, в publish не включается. Не публикуйте локальные конфигурации и секреты.

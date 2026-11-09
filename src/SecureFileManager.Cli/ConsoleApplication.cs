@@ -173,7 +173,21 @@ public sealed class ConsoleApplication(IServiceProvider services, ConsoleUi? ter
             var rows = (sort switch { "2" => filtered.OrderBy(x => x.SizeBytes), "3" => filtered.OrderByDescending(x => x.ModifiedUtc), _ => filtered.OrderByDescending(x => x.IsDirectory).ThenBy(x => x.Name) }).ToArray();
             ui.Line("\nКомпьютер: " + (path == "" ? "Диски" : directory.Path));
             if (directory.IsTruncated) ui.Line("Список ограничен 10000 объектами.");
-            ui.Table(rows.Select((x, i) => new[] { (i + 1).ToString(), x.Name, x.IsDirectory ? "Папка/диск" : "Файл", x.SizeBytes?.ToString() ?? "—", x.ModifiedUtc?.ToLocalTime().ToString("g") ?? "—", x.Note }), "№", "Имя", "Тип", "Байт", "Изменён", "Примечание");
+            if (directory.Path == "")
+            {
+                var capacity = await Run(ct => Get<IDriveService>().GetAsync(ct));
+                var drives = capacity.Value?.ToDictionary(x => x.Name, StringComparer.OrdinalIgnoreCase);
+                ui.Table(rows.Select((x, i) =>
+                {
+                    var drive = drives?.GetValueOrDefault(x.Path);
+                    return new[] { (i + 1).ToString(), x.Name, drive?.Label ?? "—", drive?.Format ?? "—",
+                        drive is { IsReady: true } ? FileDisplay.Bytes(drive.Total) : "—",
+                        drive is { IsReady: true } ? FileDisplay.Bytes(drive.Used) : "—",
+                        drive is { IsReady: true } ? FileDisplay.Bytes(drive.Free) : "—", x.Note };
+                }), "№", "Диск", "Метка", "ФС", "Всего", "Занято", "Свободно", "Примечание");
+            }
+            else
+                ui.Table(rows.Select((x, i) => new[] { (i + 1).ToString(), x.Name, x.IsDirectory ? "Папка/диск" : "Файл", x.SizeBytes?.ToString() ?? "—", x.ModifiedUtc?.ToLocalTime().ToString("g") ?? "—", x.Note }), "№", "Имя", "Тип", "Байт", "Изменён", "Примечание");
             ui.Line("1. Открыть  2. Вверх  3. Перейти по пути  4. Свойства дисков\n5. Создать файл  6. Создать папку  7. Копировать  8. Переместить  9. Переименовать\n10. В корзину  11. Восстановить по исходному пути  12. ZIP\n13. Восстановить операции  14. Восстановить документ  15. Свойства объекта\n16. Поиск  17. Сортировка  18. Обновить  0. Назад");
             try
             {
@@ -183,7 +197,7 @@ public sealed class ConsoleApplication(IServiceProvider services, ConsoleUi? ter
                     case "1": var selected = rows[ui.Index(rows.Length)]; if (selected.CanEnter) path = selected.Path; else if (!selected.IsDirectory) await OpenExternal(selected.Path); else ui.Line(selected.Note); break;
                     case "2": path = directory.ParentPath ?? ""; break;
                     case "3": path = ui.Read("Абсолютный путь каталога (пусто — компьютер)"); break;
-                    case "4": var drives = await Run(ct => Get<IDriveService>().GetAsync(ct)); if (drives.Succeeded) ui.Table(drives.Value!.Select(x => new[] { x.Name, x.Label, x.Type, x.Format, x.IsReady.ToString(), FileDisplay.Bytes(x.Total), FileDisplay.Bytes(x.Free) }), "Диск", "Метка", "Тип", "ФС", "Готов", "Всего", "Свободно"); break;
+                    case "4": var drives = await Run(ct => Get<IDriveService>().GetAsync(ct)); if (drives.Succeeded) ui.Table(drives.Value!.Select(x => new[] { x.Name, x.Label, x.Type, x.Format, x.IsReady ? "Да" : "Нет", x.IsReady ? FileDisplay.Bytes(x.Total) : "—", x.IsReady ? FileDisplay.Bytes(x.Used) : "—", x.IsReady ? FileDisplay.Bytes(x.Free) : "—" }), "Диск", "Метка", "Тип", "ФС", "Готов", "Всего", "Занято", "Свободно"); break;
                     case "5": await ExternalCreate(path, false); break;
                     case "6": await ExternalCreate(path, true); break;
                     case "7": await ExternalTransfer(rows[ui.Index(rows.Length)], false, false); break;
