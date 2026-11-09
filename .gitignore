@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+.vs/
+artifacts/
+TestResults/
+**/appsettings.Development.json
+**/appsettings.json
+*.user
+*.suo
+*.mdf
+*.ldf

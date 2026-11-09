@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SecureFileManager CLI (Development)": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SFM_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

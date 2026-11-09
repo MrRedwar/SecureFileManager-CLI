@@ -1,0 +1,446 @@
+[
+  {
+    "source": "src/SecureFileManager.Core/SecureFileManager.Core.csproj",
+    "target": "src/SecureFileManager.Core/SecureFileManager.Core.csproj",
+    "sha256": "712BE7E760764C1617E50AD29FE1AEEFD5FD5F64AA25B876EE7D5327E876967A",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Entities/.gitkeep",
+    "target": "src/SecureFileManager.Core/Entities/.gitkeep",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Entities/ExternalDocument.cs",
+    "target": "src/SecureFileManager.Core/Entities/ExternalDocument.cs",
+    "sha256": "2CD408A079C57140A2EF04586432D6CB01FF595DAC883E284546F90109075A21",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Entities/FileRecord.cs",
+    "target": "src/SecureFileManager.Core/Entities/FileRecord.cs",
+    "sha256": "B27624A8D34C3250DCFD061808D17B85F75D9DB03C77864AD5229100D2F86479",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Entities/Operation.cs",
+    "target": "src/SecureFileManager.Core/Entities/Operation.cs",
+    "sha256": "C688B9E96B7A52A6EBC5290807D4423C6EBF8ED7807DD423A93C804520D62850",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Entities/User.cs",
+    "target": "src/SecureFileManager.Core/Entities/User.cs",
+    "sha256": "B1485F73F2A6D63833BA4D428F267781DD739ED3E70E9CAAE0396C951336AA50",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/ArchiveContracts.cs",
+    "target": "src/SecureFileManager.Core/Files/ArchiveContracts.cs",
+    "sha256": "CBCBBC60032994BC280D7A550F18681AE7D02C83F7E366BCE923646D925DE47F",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/ComputerBrowsing.cs",
+    "target": "src/SecureFileManager.Core/Files/ComputerBrowsing.cs",
+    "sha256": "C9F9D900E7D795EF7D2D131BA830470621F4D02D98A388089F957EDD12AE4B6A",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/DocumentValidation.cs",
+    "target": "src/SecureFileManager.Core/Files/DocumentValidation.cs",
+    "sha256": "C415D3279FADAE2A1BC7EEADB0BDE041A5D094393BD2ADAABAB13FC94F254A38",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/ExternalDocumentContracts.cs",
+    "target": "src/SecureFileManager.Core/Files/ExternalDocumentContracts.cs",
+    "sha256": "913D5C1948D2A0669C41219B71C9D3E06138555EB9B0D89A73019D2ACBAAD43F",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/ExternalDocumentService.cs",
+    "target": "src/SecureFileManager.Core/Files/ExternalDocumentService.cs",
+    "sha256": "5844C7BF7253518B937A2CB7825ACAC8CC9CC889A83EC16F89291E4EA93CDEAC",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/ExternalFileOperations.cs",
+    "target": "src/SecureFileManager.Core/Files/ExternalFileOperations.cs",
+    "sha256": "0A273897050EC622595F9EF2AADC8145AC587C118089AAC2FB8C15E9B3FE4BA2",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/FileContracts.cs",
+    "target": "src/SecureFileManager.Core/Files/FileContracts.cs",
+    "sha256": "BA79F1597DEF453F521293C70299FEE4222FDB9BAF959443AAC06578D3C19BB6",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/FileService.Archives.cs",
+    "target": "src/SecureFileManager.Core/Files/FileService.Archives.cs",
+    "sha256": "6766CD2303D70720E332D98053CA93F8D32868134B136784460256AEA4C275B2",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/FileService.cs",
+    "target": "src/SecureFileManager.Core/Files/FileService.cs",
+    "sha256": "A8F61835D5981F86D6ABDB30A3CE0FB10318F1691EF67B12C2AE710F1C85DAC2",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/StorageDiagnostics.cs",
+    "target": "src/SecureFileManager.Core/Files/StorageDiagnostics.cs",
+    "sha256": "E272CA4690376DD34E6C244CB1ED193DE70B8028C12D0AA78D3E3607B13C973C",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Files/ZipEngine.cs",
+    "target": "src/SecureFileManager.Core/Files/ZipEngine.cs",
+    "sha256": "26C69EF6CC4C8517BFFBCB913F98EE08AD05F44C12A5ADEAA842647EAA9BAD7A",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Interfaces/.gitkeep",
+    "target": "src/SecureFileManager.Core/Interfaces/.gitkeep",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Interfaces/IFileRepository.cs",
+    "target": "src/SecureFileManager.Core/Interfaces/IFileRepository.cs",
+    "sha256": "5BBA2D95B5026CC51365E0B3E73ED6EB5ADD3C784F16FAF97AA32D942DC0BD25",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Interfaces/IOperationRepository.cs",
+    "target": "src/SecureFileManager.Core/Interfaces/IOperationRepository.cs",
+    "sha256": "4A07D5ECCABBFAE3168453456F2D24E85392B4E01F2A2D042C68F677ECF6C14E",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Interfaces/ISecurityServices.cs",
+    "target": "src/SecureFileManager.Core/Interfaces/ISecurityServices.cs",
+    "sha256": "94D5D3B742DAA67F041D7367CDEF480F5CB0DB70F846E385DB37E5D1F4EF837E",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Interfaces/IUserRepository.cs",
+    "target": "src/SecureFileManager.Core/Interfaces/IUserRepository.cs",
+    "sha256": "EC02308A02F6AF59BC3D4ADEAA42C2C5460E6F384D96ADD6290D977AA594787C",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Journal/AuditHealth.cs",
+    "target": "src/SecureFileManager.Core/Journal/AuditHealth.cs",
+    "sha256": "32777020E84F64AEC6F20BB639593C637A6853BD4867C095FBCB1E1396306A7F",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Journal/JournalContracts.cs",
+    "target": "src/SecureFileManager.Core/Journal/JournalContracts.cs",
+    "sha256": "B57E2818EF9BE0E6B8A867C839244F40A0F707134F2D1ECB9F9954040FA8DF85",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Journal/JournalService.cs",
+    "target": "src/SecureFileManager.Core/Journal/JournalService.cs",
+    "sha256": "0E9DA63899F699F9A473B8D83C09646704045215F94A5AEAA4035BC652914579",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Results/.gitkeep",
+    "target": "src/SecureFileManager.Core/Results/.gitkeep",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Results/RepositoryResult.cs",
+    "target": "src/SecureFileManager.Core/Results/RepositoryResult.cs",
+    "sha256": "B6D024E617C8014978066257736E6475A60A83246CD99AE518D808AFFF554340",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Results/SecurityOutcomes.cs",
+    "target": "src/SecureFileManager.Core/Results/SecurityOutcomes.cs",
+    "sha256": "6E4980A1E7970F447B7C8D48F28EA33B37A1913C4B3E1CEAA0769FC1803BCE0F",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Security/.gitkeep",
+    "target": "src/SecureFileManager.Core/Security/.gitkeep",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Security/ExternalPathSyntax.cs",
+    "target": "src/SecureFileManager.Core/Security/ExternalPathSyntax.cs",
+    "sha256": "F683013A9D7183FD2166DB28164A582AF56A6D36F501191D5ACD3AFA06ABCC01",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Security/IdentityValidation.cs",
+    "target": "src/SecureFileManager.Core/Security/IdentityValidation.cs",
+    "sha256": "0407776EE0216222B5A195FB7FC3DCA74D76FA4D49DD080945CE92C74BB271FA",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Security/LoginProtectionPolicy.cs",
+    "target": "src/SecureFileManager.Core/Security/LoginProtectionPolicy.cs",
+    "sha256": "58271A36CED25BB4B868E528C794D6F329F3F50FFB70138F8FD46A3A86FC5F35",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Security/PasswordSecurity.cs",
+    "target": "src/SecureFileManager.Core/Security/PasswordSecurity.cs",
+    "sha256": "014829E3BFFF9EAE74C1C4FD8A7DC08BA4262963C037F4281B868EF3D7026277",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Security/RelativePathSyntax.cs",
+    "target": "src/SecureFileManager.Core/Security/RelativePathSyntax.cs",
+    "sha256": "6957C13B451EC665636BC95DD25043FEA50A7D24CA19D3A270EB075CA5AC887E",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Services/.gitkeep",
+    "target": "src/SecureFileManager.Core/Services/.gitkeep",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Services/AuthenticationService.cs",
+    "target": "src/SecureFileManager.Core/Services/AuthenticationService.cs",
+    "sha256": "1CD07677433CF0315C322AF090EF14CE98488B58025E4D437F3C7C685CC90C4B",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Services/RegistrationService.cs",
+    "target": "src/SecureFileManager.Core/Services/RegistrationService.cs",
+    "sha256": "7546DE8AEF1FE582411E6D9C36EC48280E1B206DBB29C992F9F3B8BB4B9E6B36",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Services/SecurityAudit.cs",
+    "target": "src/SecureFileManager.Core/Services/SecurityAudit.cs",
+    "sha256": "8125973902E92CF61C0255DDF04E2C1F6C6054B2E79B04BB0579DB412FC57365",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Services/UserSession.cs",
+    "target": "src/SecureFileManager.Core/Services/UserSession.cs",
+    "sha256": "A18DE6AE025FF084F0F1523436139674B93915C1562E6A0F30872F806ED98C13",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Core/Services/UserStorageService.cs",
+    "target": "src/SecureFileManager.Core/Services/UserStorageService.cs",
+    "sha256": "B29592D6B8F3CC81835B11A33052A4A8F08282178E10BD582D5EF77C635D8B58",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/AppDbContext.cs",
+    "target": "src/SecureFileManager.Data/AppDbContext.cs",
+    "sha256": "AE616AC60A8F8374CA3A600D678E06D965B13DB677B34CE15614D0A7059598C0",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/AppDbContextFactory.cs",
+    "target": "src/SecureFileManager.Data/AppDbContextFactory.cs",
+    "sha256": "75B34B28246BBAE718B05659C4E0F6FF5E5F91715C0BD11FB02795FDF418C531",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/SecureFileManager.Data.csproj",
+    "target": "src/SecureFileManager.Data/SecureFileManager.Data.csproj",
+    "sha256": "E1CDB04876BC48CD11B647DB372C5AA35F73EAC6E95769ED4BA626D375CC6595",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Configuration/DatabaseConfiguration.cs",
+    "target": "src/SecureFileManager.Data/Configuration/DatabaseConfiguration.cs",
+    "sha256": "0D2419B382A124B9CD3392F9439D25558642C5B627BADD85E29E079977EDE4E8",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/DependencyInjection/.gitkeep",
+    "target": "src/SecureFileManager.Data/DependencyInjection/.gitkeep",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/DependencyInjection/DataServiceCollectionExtensions.cs",
+    "target": "src/SecureFileManager.Data/DependencyInjection/DataServiceCollectionExtensions.cs",
+    "sha256": "962C61CD8BFDD12071FA756211F90A07A96DDBC9C6CF16DE314FDD175FAA2CB9",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Files/ExternalDocumentStore.cs",
+    "target": "src/SecureFileManager.Data/Files/ExternalDocumentStore.cs",
+    "sha256": "651E19761B304FDA0FE3D2F6C6D27323BD2B378AB473099C973FE091D0EA794E",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Files/FileTransactionStore.cs",
+    "target": "src/SecureFileManager.Data/Files/FileTransactionStore.cs",
+    "sha256": "858FB61399C57195EE6D63D31307970EEC34391D1E9231937C6DB11F46AB3EB6",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Identity/AuditProbe.cs",
+    "target": "src/SecureFileManager.Data/Identity/AuditProbe.cs",
+    "sha256": "659D124B6C878C9821A79BAA01D34C82C6BF05A35EB9635CEFA48489E1615469",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Identity/DatabaseConnectionCheck.cs",
+    "target": "src/SecureFileManager.Data/Identity/DatabaseConnectionCheck.cs",
+    "sha256": "F6E63FCDBBC89C166EAD4FFB64C8B409C4772C0782E5B6E32733F365E4A80D8D",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Identity/IdentityStore.cs",
+    "target": "src/SecureFileManager.Data/Identity/IdentityStore.cs",
+    "sha256": "A44831D329CCAAC0EEE6CA735E76D11B65A4BE9F8C253464D8D93046F0A4AFA5",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Migrations/.gitkeep",
+    "target": "src/SecureFileManager.Data/Migrations/.gitkeep",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Migrations/20261101094955_InitialCreate.cs",
+    "target": "src/SecureFileManager.Data/Migrations/20261101094955_InitialCreate.cs",
+    "sha256": "69F2E8FF6730B8317547B2FEA67E036B0ED7D668EEB51E0A75A9FB00732078EC",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Migrations/20261101094955_InitialCreate.Designer.cs",
+    "target": "src/SecureFileManager.Data/Migrations/20261101094955_InitialCreate.Designer.cs",
+    "sha256": "C0A36D9D53DD0AE98406A5A58C93AFA51E54409719CF712A5FF8B60DA591DC7E",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Migrations/20261101122237_AddLoginFailureWindow.cs",
+    "target": "src/SecureFileManager.Data/Migrations/20261101122237_AddLoginFailureWindow.cs",
+    "sha256": "1A49796842C7206F3BB9EE8D90D28081CC5989AE164E48D57599367042C8C383",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Migrations/20261101122237_AddLoginFailureWindow.Designer.cs",
+    "target": "src/SecureFileManager.Data/Migrations/20261101122237_AddLoginFailureWindow.Designer.cs",
+    "sha256": "DCA7172284C91FB8D33A6B3A8F42EE6573AA947F5362BAFC11A3D0DCA5E173BC",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Migrations/20261107101211_AddExternalDocuments.cs",
+    "target": "src/SecureFileManager.Data/Migrations/20261107101211_AddExternalDocuments.cs",
+    "sha256": "B2556B9FC45E0C802E8AC497883015D721C9EDF869BB5E349EC1F6388799119A",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Migrations/20261107101211_AddExternalDocuments.Designer.cs",
+    "target": "src/SecureFileManager.Data/Migrations/20261107101211_AddExternalDocuments.Designer.cs",
+    "sha256": "A9E787B28B54BE1C6C903BDB8F1656975DF8BB64A0D3394936E24D9997718BFD",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Migrations/AppDbContextModelSnapshot.cs",
+    "target": "src/SecureFileManager.Data/Migrations/AppDbContextModelSnapshot.cs",
+    "sha256": "0BE0A7AA0D89FC641B873B175D9EDE864E82943E8F96656AC8FE6A2444B3B7C7",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Repositories/.gitkeep",
+    "target": "src/SecureFileManager.Data/Repositories/.gitkeep",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Repositories/FileRepository.cs",
+    "target": "src/SecureFileManager.Data/Repositories/FileRepository.cs",
+    "sha256": "C2891A466D27E090C7D8A2141587BFA854B6199D71B81F91CBDD48E04FF72A39",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Repositories/OperationRepository.cs",
+    "target": "src/SecureFileManager.Data/Repositories/OperationRepository.cs",
+    "sha256": "68D26DA425EA98962AD964470728DF878D28FF290451B4D6E3C2C4FB5478411E",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Repositories/RepositoryBase.cs",
+    "target": "src/SecureFileManager.Data/Repositories/RepositoryBase.cs",
+    "sha256": "F51DD56FACDAA69783B742999A8C297440C91088BCB49D2477C2872202115BCC",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Data/Repositories/UserRepository.cs",
+    "target": "src/SecureFileManager.Data/Repositories/UserRepository.cs",
+    "sha256": "900E0EE934CE4FAA0A927088C9ABB4BC9F88C8B578D0408FEE2B32279AF0869C",
+    "unchanged": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/PersonalStorage.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/PersonalStorage.cs",
+    "sha256": "B5788D216FEB08264B3E0DC8464CB18323569DC008A7B4C85A51E85A5DC1E5FB",
+    "namespaceOnly": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/SafeNativeFile.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/SafeNativeFile.cs",
+    "sha256": "1AA6718E2CFCCDA1FECC97F8709B63421CC3606A909585536866018BF72654B6",
+    "namespaceOnly": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/StorageConfiguration.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/StorageConfiguration.cs",
+    "sha256": "C81B27BE303AFD92385CDB9B6446F4227B8AC79F39CF99BA01FE1CD7DD34CBF5",
+    "namespaceOnly": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/WindowsComputerDirectoryReader.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/WindowsComputerDirectoryReader.cs",
+    "sha256": "16B00906B60D7063D5685561757107B0C207B256577DCAB42ED18AD509BE5410",
+    "namespaceOnly": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/WindowsDriveService.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/WindowsDriveService.cs",
+    "sha256": "292EC22AB2AB65CE52C6C3BFC79A16EDCF44B1D0874FDF7A8081A3D8B4D0BC69",
+    "namespaceOnly": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/WindowsExternalDocumentStorage.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/WindowsExternalDocumentStorage.cs",
+    "sha256": "4EC849BC14F026D6D3734C83AC93EF12A2D5E85FCF7DD98801FC9024070954A0",
+    "namespaceOnly": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/WindowsExternalOperationStorage.ArchivesTrash.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/WindowsExternalOperationStorage.ArchivesTrash.cs",
+    "sha256": "297FEC929FDE81AB96FD51BABFD3E5EF5C6819C192407D756C883BFF1812A490",
+    "namespaceOnly": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/WindowsExternalOperationStorage.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/WindowsExternalOperationStorage.cs",
+    "sha256": "C0AFE489DF2F44E60F2FDBC1CC49B80D58EB13EEDB32905CEF4515EA41E66B6E",
+    "namespaceOnly": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/WindowsFileStorage.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/WindowsFileStorage.cs",
+    "sha256": "94BA76F48A66043D725BEF615BF1E61D573A8F424716623F6D8E7D79DBA24E6B",
+    "namespaceOnly": true
+  },
+  {
+    "source": "src/SecureFileManager.Wpf/Infrastructure/FileSystem/WindowsFileStorage.Prepared.cs",
+    "target": "src/SecureFileManager.Infrastructure.Windows/FileSystem/WindowsFileStorage.Prepared.cs",
+    "sha256": "22874DBCBA4F93DDEB19C80641C5891686811291F0FF0D5E857C7D29A2979C82",
+    "namespaceOnly": true
+  }
+]
