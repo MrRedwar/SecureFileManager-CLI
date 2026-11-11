@@ -249,7 +249,7 @@ public sealed class ConsoleApplication(IServiceProvider services, ConsoleUi? ter
         }
         while (true)
         {
-            ui.Line($"\nДокумент: {document.Name} · UTF-8 · до 10 МиБ · {(text == original ? "без изменений" : "есть изменения")}\n1. Просмотр  2. Заменить текст  3. Валидация  4. Сохранить\n5. Перечитать с диска  6. Отменить изменения буфера  0. Закрыть");
+            ui.Line($"\nДокумент: {document.Name} · UTF-8 · до 10 МиБ · {(text == original ? "без изменений" : "есть изменения")}\n1. Просмотр  2. Редактировать строку  3. Валидация  4. Сохранить\n5. Перечитать с диска  6. Отменить изменения буфера  7. Полностью заменить текст\n8. Вставить строку  9. Удалить строку  10. Заменить фрагмент  0. Закрыть");
             try
             {
                 switch (ui.Read("Выбор"))
@@ -257,10 +257,16 @@ public sealed class ConsoleApplication(IServiceProvider services, ConsoleUi? ter
                     case "0": if (text == original) return; var decision = ui.Read("Есть изменения: 1 — сохранить и закрыть, 2 — закрыть без сохранения, иначе — продолжить"); if (decision == "2" || decision == "1" && await Save()) return; break;
                     case "1": ui.Line(text); break;
                     case "2":
+                        var existingLines = TextEdits.Lines(text);
+                        ShowLines(existingLines);
+                        var selectedLine = ui.Index(existingLines.Count);
+                        text = TextEdits.ChangeLine(text, selectedLine, ui.EditLine("Строка " + (selectedLine + 1), existingLines[selectedLine]));
+                        break;
+                    case "7":
                         ui.Line("Введите весь новый текст. .end — закончить; /cancel — оставить прежний буфер. Переводы строк при вводе — Windows CRLF.");
                         var lines = new List<string>(); var bytes = 0;
                         while (true) { var line = ui.Read("Текст"); if (line == ".end") break; bytes += System.Text.Encoding.UTF8.GetByteCount(line) + 2; if (bytes > FileRules.TextLimit) throw new ArgumentException(); lines.Add(line); }
-                        text = string.Join("\r\n", lines); break;
+                        text = TextEdits.Check(string.Join("\r\n", lines)); break;
                     case "3": var validation = await Run(ct => service.ValidateAsync(document.Id, text, ct)); if (validation.Succeeded) ui.Line(validation.Value!.Description); break;
                     case "4": await Save(); break;
                     case "5":
@@ -269,6 +275,20 @@ public sealed class ConsoleApplication(IServiceProvider services, ConsoleUi? ter
                         if (reload.Succeeded) { document = reload.Value!; text = original = document.Content; version = document.Version; ui.Line(document.Validation?.Description ?? "Прочитано."); }
                         break;
                     case "6": if (ui.Confirm("Отменить несохранённые изменения?")) text = original; break;
+                    case "8":
+                        var insertLines = TextEdits.Lines(text); ShowLines(insertLines);
+                        var position = ui.Read($"Вставить перед строкой 1–{insertLines.Count}; {insertLines.Count + 1} — в конец");
+                        if (!int.TryParse(position, out var insertAt)) throw new ArgumentException();
+                        text = TextEdits.InsertLine(text, insertAt - 1, ui.Read("Новая строка")); break;
+                    case "9":
+                        var deleteLines = TextEdits.Lines(text); ShowLines(deleteLines);
+                        var deleteLine = ui.Index(deleteLines.Count);
+                        if (ui.Confirm("Удалить строку " + (deleteLine + 1) + " из буфера?")) text = TextEdits.DeleteLine(text, deleteLine);
+                        break;
+                    case "10":
+                        var find = ui.Read("Найти (с учётом регистра)"); var replacement = ui.Read("Заменить на (можно пустую строку)");
+                        if (ui.Confirm("Заменить все точные совпадения в буфере?")) text = TextEdits.Replace(text, find, replacement);
+                        break;
                     default: ui.Line("Неизвестный пункт меню."); break;
                 }
             }
@@ -276,6 +296,8 @@ public sealed class ConsoleApplication(IServiceProvider services, ConsoleUi? ter
             catch (ArgumentException) { ui.Line("Превышен предел ввода или неверное значение. Буфер не изменён."); }
         }
     }
+    private void ShowLines(IReadOnlyList<string> lines)
+    { for (var i = 0; i < lines.Count; i++) ui.Line($"{i + 1,4} | {lines[i]}"); }
     private async Task Archives()
     {
         ui.Line("1. ZIP в личном хранилище  2. ZIP внешнего объекта по пути  0. Назад");

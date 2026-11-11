@@ -26,6 +26,7 @@ public sealed class ScriptTerminal(IEnumerable<string> input, IEnumerable<string
         return value;
     }
     public override string Password(string prompt) => secrets.Dequeue();
+    public override string EditLine(string prompt, string initial) => Read(prompt);
 }
 
 [Collection("SQL Server")]
@@ -84,7 +85,7 @@ public sealed class CliTests
             Assert.True((await provider.GetRequiredService<IRegistrationService>().RegisterAsync(name, Password, Password)).Succeeded);
             var note = Path.Combine(external, "note.json"); var archive = Path.Combine(external, "notes.zip");
             var terminal = new ScriptTerminal([
-                "2", name, "1", "3", external, "5", "note.json", "1", "1", "2", "{\"ok\":true}", ".end", "3", "4", "0",
+                "2", name, "1", "3", external, "5", "note.json", "1", "1", "7", "{\"ok\":true}", ".end", "3", "4", "0",
                 "7", "1", external, "copied.json", "9", "1", "renamed.json", "10", "1", "да", "11", note, "да", "0",
                 "4", "2", note, "1", external, "notes.zip", "да",
                 "4", "2", archive, "2", "4", "2", archive, "3", external, "extracted", "да", "5", "0", "0"
@@ -112,7 +113,9 @@ public sealed class CliTests
             var name = "cli-" + Guid.NewGuid().ToString("N");
             var terminal = new ScriptTerminal([
                 "1", name, "2", name,
-                "2", "3", "note.txt", "1", "1", "2", "Привет из CLI", ".end", "3", "4", "0",
+                "2", "3", "note.txt", "1", "1", "7", "Привет из CLI", ".end",
+                "2", "1", "/cancel", "1", "8", "1", "Временная строка", "9", "1", "да",
+                "10", "CLI", "консоли", "да", "2", "1", "Египет не тот — русский текст", "1", "3", "4", "0",
                 "9", "1", "1", "archive.zip", "9", "2", "1", "9", "3", "1", "Extracted", "да", "0",
                 "5", "0", "6", "2", "7", "0"
             ], [Password, Password, Password]);
@@ -121,8 +124,9 @@ public sealed class CliTests
             await using var db = new Factory(database.ConnectionString).CreateDbContext();
             var user = await db.Users.SingleAsync(x => x.Username == name);
             var personal = Path.Combine(root, "Users", user.Id.ToString("D"));
-            Assert.Equal("Привет из CLI", await File.ReadAllTextAsync(Path.Combine(personal, "note.txt")));
-            Assert.Equal("Привет из CLI", await File.ReadAllTextAsync(Path.Combine(personal, "Extracted", "note.txt")));
+            Assert.Equal("Египет не тот — русский текст", await File.ReadAllTextAsync(Path.Combine(personal, "note.txt")));
+            Assert.Equal("Египет не тот — русский текст", await File.ReadAllTextAsync(Path.Combine(personal, "Extracted", "note.txt")));
+            Assert.Contains("Египет не тот — русский текст", terminal.Output.ToString());
             Assert.True(await db.Operations.AnyAsync(x => x.UserId == user.Id && x.Details == "FILE_TX_SAVE"));
             Assert.True(await db.Operations.AnyAsync(x => x.UserId == user.Id && x.Details == "LOGOUT"));
             Assert.DoesNotContain(Password, terminal.Output.ToString());

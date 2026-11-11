@@ -4,20 +4,28 @@ namespace SecureFileManager.Cli;
 
 public class ConsoleUi
 {
-    public virtual void Write(string text) => Console.Write(Safe(text));
+    public virtual void Write(string text) => UnicodeConsole.Write(Safe(text));
     public void Line(string text = "") => Write(text + Environment.NewLine);
     public virtual string Read(string prompt)
     {
         Write(prompt + " (/cancel — отмена): ");
-        var value = Console.ReadLine() ?? throw new EndOfStreamException();
+        var value = UnicodeConsole.ReadLine() ?? throw new EndOfStreamException();
         if (value == "/cancel") throw new OperationCanceledException();
         return value;
+    }
+    public virtual string EditLine(string prompt, string initial)
+    {
+        Write(prompt + " (←/→, Home/End, Backspace/Delete; Enter — принять; /cancel — отмена): ");
+        var value = UnicodeConsole.ReadLine(Safe(initial)) ?? throw new EndOfStreamException();
+        if (value == "/cancel") throw new OperationCanceledException();
+        // An unchanged line must retain original tabs/control characters, not the safe display projection.
+        return value == Safe(initial) ? initial : value;
     }
     public virtual string Password(string prompt)
     {
         if (Console.IsInputRedirected) throw new InvalidOperationException("Для пароля нужен интерактивный терминал. Передача пароля через stdin запрещена.");
         Write(prompt + " (Esc — отмена): ");
-        return ReadMasked(() => Console.ReadKey(true), text => Console.Write(text));
+        return ReadMasked(() => Console.ReadKey(true), UnicodeConsole.Write);
     }
     public static string ReadMasked(Func<ConsoleKeyInfo> readKey, Action<string> write)
     {

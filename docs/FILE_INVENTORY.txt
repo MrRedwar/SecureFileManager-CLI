@@ -3,12 +3,14 @@ docs\ASSIGNMENT_COMPLIANCE.md
 docs\FILE_INVENTORY.txt
 docs\MANUAL_TEST.md
 docs\PROGRESS.md
+docs\reports\Отчёт_практическая_работа_1_SecureFileManager_CLI_с_кодом.docx
 docs\REUSE_MANIFEST.json
 docs\SOURCE_REUSE.md
 docs\TEST_REPORT.md
 global.json
 README.md
 scripts\Test-CLI.ps1
+scripts\Test-ConsoleUnicode.ps1
 SecureFileManager-CLI.sln
 src\SecureFileManager.Cli\appsettings.example.json
 src\SecureFileManager.Cli\AuditListItem.cs
@@ -19,6 +21,8 @@ src\SecureFileManager.Cli\Program.cs
 src\SecureFileManager.Cli\Properties\launchSettings.json
 src\SecureFileManager.Cli\SecureFileManager.Cli.csproj
 src\SecureFileManager.Cli\StartupCheck.cs
+src\SecureFileManager.Cli\TextEdits.cs
+src\SecureFileManager.Cli\UnicodeConsole.cs
 src\SecureFileManager.Core\Entities\ExternalDocument.cs
 src\SecureFileManager.Core\Entities\FileRecord.cs
 src\SecureFileManager.Core\Entities\Operation.cs
@@ -86,6 +90,8 @@ src\SecureFileManager.Infrastructure.Windows\FileSystem\WindowsExternalOperation
 src\SecureFileManager.Infrastructure.Windows\FileSystem\WindowsFileStorage.cs
 src\SecureFileManager.Infrastructure.Windows\FileSystem\WindowsFileStorage.Prepared.cs
 src\SecureFileManager.Infrastructure.Windows\SecureFileManager.Infrastructure.Windows.csproj
+tests\ConsoleUnicodeProbe\ConsoleUnicodeProbe.csproj
+tests\ConsoleUnicodeProbe\Program.cs
 tests\SecureFileManager.Tests\ArchiveIntegrationTests.cs
 tests\SecureFileManager.Tests\CliTests.cs
 tests\SecureFileManager.Tests\ComputerBrowserIntegrationTests.cs
@@ -106,4 +112,5 @@ tests\SecureFileManager.Tests\SecureFileManager.Tests.csproj
 tests\SecureFileManager.Tests\SecurityIntegrationTests.cs
 tests\SecureFileManager.Tests\SqlDatabaseFixture.cs
 tests\SecureFileManager.Tests\StorageConfigurationTests.cs
+tests\SecureFileManager.Tests\TextEditsTests.cs
 tests\SecureFileManager.Tests\ZipEngineTests.cs
