@@ -307,6 +307,17 @@ public sealed class ConsoleApplication(IServiceProvider services, ConsoleUi? ter
     { ui.Line(preview.Summary + "\n" + preview.Warning); ui.Table(preview.Entries.Select(x => new[] { x.Path, x.Directory ? "Папка" : "Файл", x.SizeLabel, x.CompressedLabel, x.Warning }), "Путь", "Тип", "Размер", "Сжатый", "Предупреждение"); }
     private sealed class ArchiveReporter(ConsoleUi ui) : IProgress<ArchiveProgress>
     { public void Report(ArchiveProgress p) => ui.Line($"ZIP: {p.Completed}/{p.Total}; {FileDisplay.Bytes(p.Bytes)}"); }
+    private string ReadZipName()
+    {
+        while (true)
+        {
+            var name = ui.Read("Имя нового ZIP (.zip добавляется автоматически)");
+            if (string.IsNullOrWhiteSpace(name)) { ui.Line("Введите имя архива."); continue; }
+            if (!name.EndsWith(".zip", StringComparison.OrdinalIgnoreCase)) name += ".zip";
+            ui.Line("Имя архива: " + name);
+            return name;
+        }
+    }
     private async Task PersonalZip(string path, FileEntry[] rows)
     {
         var archive = Get<IArchiveService>();
@@ -316,7 +327,7 @@ public sealed class ConsoleApplication(IServiceProvider services, ConsoleUi? ter
         {
             var numbers = ui.Read("Номера через запятую").Split(','); var ids = new List<Guid>();
             foreach (var number in numbers) { if (!int.TryParse(number.Trim(), out var n) || n < 1 || n > rows.Length || rows[n - 1].Id is null) throw new ArgumentException(); ids.Add(rows[n - 1].Id!.Value); }
-            var name = ui.Read("Имя нового ZIP"); await Done(ct => archive.CreateArchiveAsync(ids, path, name, new ArchiveReporter(ui), ct)); return;
+            var name = ReadZipName(); await Done(ct => archive.CreateArchiveAsync(ids, path, name, new ArchiveReporter(ui), ct)); return;
         }
         if (choice is not ("2" or "3")) { ui.Line("Неизвестный пункт меню."); return; }
         var id = rows[ui.Index(rows.Length)].Id ?? throw new ArgumentException();
@@ -330,7 +341,7 @@ public sealed class ConsoleApplication(IServiceProvider services, ConsoleUi? ter
         ArchivePreview? preview = null;
         if (choice is "2" or "3") { var result = await Run(ct => External.PreviewAsync(source, ct)); if (!result.Succeeded) return; preview = result.Value!; Preview(preview); if (choice == "2" || !preview.CanExtract) return; }
         if (choice is not ("1" or "3")) { ui.Line("Неизвестный пункт меню."); return; }
-        var directory = ui.Read("Полный путь папки назначения"); var name = ui.Read(choice == "1" ? "Имя нового ZIP" : "Имя новой папки");
+        var directory = ui.Read("Полный путь папки назначения"); var name = choice == "1" ? ReadZipName() : ui.Read("Имя новой папки");
         if (ui.Confirm("Выполнить ZIP-операцию без перезаписи?")) await Done(ct => External.ExecuteAsync(new(choice == "1" ? ExternalChange.CreateZip : ExternalChange.ExtractZip, source, directory, name, preview?.Version), ct));
     }
     private async Task Journal()

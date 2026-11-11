@@ -87,7 +87,7 @@ public sealed class CliTests
             var terminal = new ScriptTerminal([
                 "2", name, "1", "3", external, "5", "note.json", "1", "1", "7", "{\"ok\":true}", ".end", "3", "4", "0",
                 "7", "1", external, "copied.json", "9", "1", "renamed.json", "10", "1", "да", "11", note, "да", "0",
-                "4", "2", note, "1", external, "notes.zip", "да",
+                "4", "2", note, "1", external, "notes", "да",
                 "4", "2", archive, "2", "4", "2", archive, "3", external, "extracted", "да", "5", "0", "0"
             ], [Password]);
             await new ConsoleApplication(provider, terminal).RunAsync();
@@ -116,7 +116,7 @@ public sealed class CliTests
                 "2", "3", "note.txt", "1", "1", "7", "Привет из CLI", ".end",
                 "2", "1", "/cancel", "1", "8", "1", "Временная строка", "9", "1", "да",
                 "10", "CLI", "консоли", "да", "2", "1", "Египет не тот — русский текст", "1", "3", "4", "0",
-                "9", "1", "1", "archive.zip", "9", "2", "1", "9", "3", "1", "Extracted", "да", "0",
+                "9", "1", "1", "", "archive", "9", "2", "1", "9", "3", "1", "Extracted", "да", "0",
                 "5", "0", "6", "2", "7", "0"
             ], [Password, Password, Password]);
             await new ConsoleApplication(provider, terminal).RunAsync();
